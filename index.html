@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Гандбольная Академия Латвии — Официальный сайт</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+    /* Сброс */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #e2e8f0, #ffffff);
+      color: #2c3e50;
+      line-height: 1.65;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    /* Хедер */
+    header#main-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #0a2540;
+      color: #f0f4f8;
+      padding: 28px 40px;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1100;
+      transition: transform 0.5s ease, background-color 0.3s ease;
+      will-change: transform;
+      user-select: none;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    header#main-header.hidden {
+      transform: translateY(-130%);
+    }
+
+    /* Навигация */
+    nav {
+      margin-top: 95px;
+      background: #fff;
+      padding: 14px 30px;
+      position: sticky;
+      top: 60px;
+      z-index: 1050;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #0a2540;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #0a2540;
+      color: #ffffff;
+      outline: none;
+      box-shadow: 0 0 6px #144c86;
+    }
+
+    /* Основной контент */
+    main {
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      background: #fff;
+      padding: 35px 50px 60px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(10, 37, 64, 0.12);
+      user-select: text;
+    }
+
+    h2 {
+      color: #072540;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 22px;
+      border-left: 6px solid #0a2540;
+      padding-left: 14px;
+      letter-spacing: 1.1px;
+    }
+
+    p, ul {
+      font-size: 1.18rem;
+      margin-bottom: 22px;
+      color: #34495e;
+    }
+
+    ul {
+      padding-left: 22px;
+      list-style-type: disc;
+      max-width: 900px;
+    }
+
+    ul li {
+      margin-bottom: 14px;
+    }
+
+    /* Акценты */
+    .highlight {
+      font-weight: 700;
+      color: #0a2540;
+    }
+
+    #leadership {
+      background: linear-gradient(135deg, #144c86, #0a2540);
+      color: #f0f4f8;
+      padding: 25px 32px;
+      border-radius: 10px;
+      font-size: 1.35rem;
+      margin-bottom: 42px;
+      line-height: 1.45;
+      box-shadow: 0 8px 18px rgba(10, 37, 64, 0.3);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #leadership a {
+      color: #ffd166;
+      font-weight: 700;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    #leadership a:hover,
+    #leadership a:focus {
+      color: #ffeaa7;
+      outline: none;
+    }
+
+    /* Новости */
+    .news-item {
+      margin-bottom: 35px;
+      border-left: 5px solid #0a2540;
+      padding-left: 20px;
+      background: #f5f8fc;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(10, 37, 64, 0.05);
+      transition: background-color 0.3s ease;
+    }
+    .news-item:hover,
+    .news-item:focus-within {
+      background-color: #e4f0ff;
+      outline: none;
+    }
+    .news-item h3 {
+      margin-top: 0;
+      color: #0a2540;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Контакты */
+    #contacts a {
+      color: #0a2540;
+      font-weight: 700;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    #contacts a:hover,
+    #contacts a:focus {
+      color: #1f497d;
+      outline: none;
+    }
+
+    /* Футер */
+    footer {
+      text-align: center;
+      padding: 26px 0;
+      font-size: 1rem;
+      background-color: #0a2540;
+      color: #f0f4f8;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      user-select: none;
+      box-shadow: 0 -3px 12px rgba(10, 37, 64, 0.3);
+      border-radius: 0 0 12px 12px;
+    }
+
+    /* Адаптив */
+    @media (max-width: 1024px) {
+      main {
+        padding: 30px 25px 50px;
+        max-width: 90%;
+      }
+      nav {
+        gap: 15px;
+        padding: 12px 15px;
+      }
+      nav a {
+        font-size: 1rem;
+        padding: 6px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header#main-header {
+        font-size: 1.6rem;
+        padding: 20px 20px;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      main {
+        padding: 20px 15px 40px;
+      }
+      nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header id="main-header" role="banner" aria-label="Заголовок сайта">
+  Гандбольная Академия Латвии
+</header>
+
+<nav role="navigation" aria-label="Основное меню">
+  <a href="#leadership">Официальное лицо</a>
+  <a href="#about">О Академии</a>
+  <a href="#programs">Программы обучения</a>
+  <a href="#schedule">Расписание</a>
+  <a href="#achievements">Достижения</a>
+  <a href="#news">Новости</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
+<main role="main" aria-labelledby="main-content">
+
+  <section id="leadership" aria-label="Информация об официальном лице">
+    Главный капитан команды и помощник тренера: <strong>Maksims Degurko</strong><br />
+    Официальное лицо академии.<br />
+    По вопросам тренировок и сотрудничества: <a href="tel:+37125354160" aria-label="Позвонить Maksims Degurko">+371 25354160</a>
+  </section>
+
+  <section id="about">
+    <h2>О Гандбольной Академии Латвии</h2>
+    <p>Гандбольная Академия Латвии является одним из самых престижных и динамично развивающихся спортивных центров страны. Основанная в 1995 году, академия с момента своего создания поставила перед собой амбициозную цель — не только развивать гандбол в Латвии, но и создавать прочную фундаментальную базу для подготовки будущих чемпионов международного уровня.</p>
+    <p>За более чем 25 лет активной работы академия выросла из небольшого клуба с ограниченными ресурсами в современный высокотехнологичный спортивный комплекс, объединяющий лучшие методики тренировки, научные разработки и опыт ведущих специалистов в области гандбола и спортивной науки.</p>
+    <p>Мы гордимся тем, что наша академия стала центром притяжения талантливой молодёжи со всей страны и за её пределами. Ежегодно сотни юных спортсменов проходят всестороннюю подготовку, включающую не только физическую и техническую составляющую, но и развитие тактического мышления, психологической устойчивости и командного духа.</p>
+    <p>Важной задачей академии является создание гармоничной и поддерживающей среды, где каждый игрок чувствует заботу и может раскрыть свой максимум. Мы убеждены, что только комплексный подход к развитию личности делает спортсмена не просто мастером спорта, а лидером и примером для будущих поколений.</p>
+    <p>Инфраструктура академии включает несколько специализированных залов с профессиональным покрытием, тренажёрные залы, реабилитационные центры, медкабинеты и зоны отдыха. Современное оборудование для анализа игровых показателей и мониторинга здоровья позволяет адаптировать тренировочный процесс под индивидуальные потребности каждого воспитанника.</p>
+    <p>Сотрудничество с ведущими европейскими и мировыми гандбольными организациями даёт нашим спортсменам возможность участия в престижных международных турнирах и обмена опытом с лучшими гандболистами мира. Академия также является площадкой для научных исследований в области спортивной медицины, биомеханики и психологии, что делает наши методики одними из самых прогрессивных и эффективных.</p>
+    <p>Особое внимание уделяется воспитанию личности: проводятся обучающие программы по лидерству, этике, здоровому образу жизни и социальной ответственности. Мы убеждены, что спорт — это не только техника и сила, но и культура, уважение и ответственность.</p>
+    <p>Наши выпускники достигают значительных высот, становясь чемпионами национальных и международных соревнований, успешно представляя Латвию на мировом уровне и вдохновляя новое поколение спортсменов.</p>
+  </section>
+
+  <section id="programs">
+    <h2>Программы обучения</h2>
+    <p>Академия предлагает комплексные тренировочные программы, специально адаптированные под различные возрастные группы и уровни подготовки:</p>
+    <ul>
+      <li><strong>Младший состав (8-12 лет):</strong> основы гандбола, развитие координации, базовых технических навыков и командной работы.</li>
+      <li><strong>Средний состав (13-17 лет):</strong> углублённая техническая подготовка, тактика, физическая выносливость, участие в региональных и международных турнирах.</li>
+      <li><strong>Старший состав (18-22 года):</strong> профессиональная подготовка, развитие лидерских качеств, индивидуальные тренировки с персональными программами, подготовка к карьере в профессиональном спорте.</li>
+    </ul>
+    <p>Помимо основных тренировок, проводится специализированная работа с вратарями, психологическая подготовка, семинары по спортивному питанию и реабилитации после травм.</p>
+    <p>Тренерский состав состоит из квалифицированных специалистов с опытом работы на национальном и международном уровнях, постоянно проходящих повышение квалификации и обмен опытом.</p>
+  </section>
+
+  <section id="schedule">
+    <h2>Расписание тренировок</h2>
+    <p>Для удобства спортсменов и их родителей расписание составлено с учётом оптимального распределения нагрузок и времени восстановления:</p>
+    <ul>
+      <li><strong>Младший состав:</strong> 8:00 — 11:00</li>
+      <li><strong>Средний и старший составы:</strong> 12:00 — 23:00</li>
+    </ul>
+    <p>Расписание может корректироваться в зависимости от участия в соревнованиях и других официальных мероприятиях. Для своевременного информирования все изменения публикуются на сайте и рассылаются по электронной почте.</p>
+    <p>Особое внимание уделяется периоду подготовки к важнейшим турнирам, когда тренировки проходят с акцентом на восстановление и тактическую подготовку.</p>
+  </section>
+
+  <section id="achievements">
+    <h2>Достижения академии</h2>
+    <div class="news-item" aria-live="polite" tabindex="0">
+      <h3>Средний состав — чемпионы мира!</h3>
+      <p>В этом месяце команда среднего состава Академии с триумфом завоевала звание чемпионов мира по гандболу среди юниоров, продемонстрировав высочайший уровень игры, профессионализм и сплочённость.</p>
+      <p>Это событие стало историческим для академии и всего латвийского гандбола, укрепив нашу репутацию как одного из ведущих спортивных центров Европы.</p>
+    </div>
+    <p>За годы работы академии воспитанники неоднократно становились победителями национальных и международных соревнований, успешно продолжая карьеру в ведущих клубах мира.</p>
+    <p>Мы гордимся каждым спортсменом и продолжаем развивать потенциал молодых талантов, стремясь к новым вершинам.</p>
+  </section>
+
+  <section id="news">
+    <h2>Новости и события</h2>
+    <article class="news-item" tabindex="0">
+      <h3>Новый сезон открыт!</h3>
+      <p>Сентябрь 2025 года ознаменовался стартом нового тренировочного сезона с обновлённой программой и расширением состава спортсменов.</p>
+      <p>На торжественном открытии присутствовали представители федерации гандбола, родители и выпускники академии.</p>
+    </article>
+
+    <article class="news-item" tabindex="0">
+      <h3>Мастер-класс от европейской легенды</h3>
+      <p>В октябре прошёл мастер-класс с участием признанного тренера и бывшего игрока сборной Европы, который поделился опытом и уникальными методиками тренировки.</p>
+      <p>Мероприятие вызвало живой интерес и собрало полный зал участников.</p>
+    </article>
+
+    <article class="news-item" tabindex="0">
+      <h3>Инновации в тренировочном процессе</h3>
+      <p>Академия внедряет новейшие технологии для мониторинга физического состояния и анализа игры, что позволяет повысить эффективность подготовки и снизить риск травм.</p>
+      <p>Используются видеоанализ, датчики движения и индивидуальные программы тренировки.</p>
+    </article>
+  </section>
+
+  <section id="contacts">
+    <h2>Контактная информация</h2>
+    <p>Для записи на тренировки и получения консультаций звоните по телефону:</p>
+    <p class="highlight"><a href="tel:+37125354160" aria-label="Позвонить Maksims Degurko">+371 25354160</a></p>
+    <p>Главный капитан команды и помощник тренера — <strong>Maksims Degurko</strong></p>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  © 2025 Гандбольная Академия Латвии. Все права защищены.
+</footer>
+
+<script>
+  // Плавное скрытие/появление хедера при скролле
+  let lastScroll = 0;
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      header.classList.add('hidden');
+    } else {
+      header.classList.remove('hidden');
+    }
+    lastScroll = currentScroll;
+  });
+</script>
+
+</body>
+</html>
